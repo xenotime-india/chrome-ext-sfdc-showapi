@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "default_locale": "en",
+  "name": "Salesforce Field Api Name",
+  "version": "1.1",
+  "description": "Salesforce Field Api Name.",
+   "icons": { "16": "images/Cloud-icon.png",
+           "48": "images/Cloud-icon_48.png",
+          "128": "images/Cloud-icon_128.png" },
+  "browser_action": {
+    "default_icon": "images/Cloud-icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.salesforce.com/*"
+      ],
+      "js": [
+        "scripts/vendors/jquery.min.js",
+        "scripts/vendors/jsforce.min.js",
+        "scripts/helper.min.js",
+        "scripts/contentscript.min.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "permissions": [
+    "https://*.salesforce.com/*",
+    "cookies",
+    "tabs"
+  ]
+}
